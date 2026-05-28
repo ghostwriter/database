@@ -8,7 +8,7 @@
 "repository":
   "name": "database"
   "description": "[WIP] Database implementation for PHP"
-  "homepage": ''
+  "homepage": "https://github.com/ghostwriter/database"
   "default_branch": "0.1.x"
   "allow_auto_merge": true
   "allow_forking": true
