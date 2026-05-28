@@ -1,11 +1,15 @@
 {
-    "name": "ghostwriter/wip",
-    "description": "Here be dragons",
+    "name": "ghostwriter/database",
+    "description": "Database implementation for PHP",
     "license": "BSD-3-Clause",
     "type": "library",
     "keywords": [
         "ghostwriter",
-        "wip"
+        "database",
+        "pdo",
+        "mysql",
+        "postgresql",
+        "sqlite"
     ],
     "authors": [
         {
@@ -15,12 +19,12 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/ghostwriter/wip",
+    "homepage": "https://github.com/ghostwriter/database",
     "support": {
-        "issues": "https://github.com/ghostwriter/wip/issues",
-        "source": "https://github.com/ghostwriter/wip",
-        "rss": "https://github.com/ghostwriter/wip/releases.atom",
-        "security": "https://github.com/ghostwriter/wip/security/advisories/new"
+        "issues": "https://github.com/ghostwriter/database/issues",
+        "source": "https://github.com/ghostwriter/database",
+        "rss": "https://github.com/ghostwriter/database/releases.atom",
+        "security": "https://github.com/ghostwriter/database/security/advisories/new"
     },
     "funding": [
         {
@@ -28,10 +32,20 @@
             "url": "https://github.com/sponsors/ghostwriter"
         }
     ],
-    "_comment": ["#BlackLivesMatter", "#FreePalestine", "#StandWithIran", "#StandWithUkraine", "#StopGenocide"],
+    "_comment": [
+        "#BlackLivesMatter",
+        "#FreePalestine",
+        "#StandWithIran",
+        "#StandWithUkraine",
+        "#StopGenocide"
+    ],
     "require": {
         "php": "~8.4.0 || ~8.5.0",
         "ext-mbstring": "*",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "ext-pdo_pgsql": "*",
+        "ext-pdo_sqlite": "*",
         "ghostwriter/case-converter": "^2.2.2",
         "ghostwriter/clock": "^3.0.2",
         "ghostwriter/collection": "^2.1.0",
@@ -62,7 +76,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Ghostwriter\\Wip\\": "src"
+            "Ghostwriter\\Database\\": "src"
         },
         "files": [
             "src/constants.php",
@@ -103,12 +117,14 @@
     "extra": {
         "ghostwriter": {
             "container": {
-                "definition": "Ghostwriter\\Wip\\Container\\WipDefinition"
+                "provider": [
+                    "Ghostwriter\\Database\\Container\\DatabaseProvider"
+                ]
             }
         },
         "thanks": {
-            "name": "ghostwriter/wip",
-            "url": "https://github.com/ghostwriter/wip"
+            "name": "ghostwriter/database",
+            "url": "https://github.com/ghostwriter/database"
         }
     },
     "scripts": {
