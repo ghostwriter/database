@@ -1,4 +1,2 @@
-github:
-    - ghostwriter
-custom:
-    - 'https://paypal.me/codepoet'
+github: [ghostwriter]
+custom: ['https://paypal.me/codepoet']
